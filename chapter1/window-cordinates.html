@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordinates</title>
+    <style>
+        div {
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            background-color: aqua;
+        }
+
+        .rect {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="rect"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        const rect = document.querySelector('.rect');
+        function printClickPos(event) {
+            const rectPos = rect.getBoundingClientRect();
+            console.log(rectPos);
+            console.log(
+                `
+                client : ${event.clientX}, ${event.clientY} 
+                page : ${event.pageX}, ${event.pageY}
+                `
+            );
+        }
+        rect.addEventListener('click', printClickPos);
+
+
+        //Ellie's Note
+        /*
+        1. 스크롤 못하게 하기 : overflow :hidden
+        2. event 에는 event라는 오브젝트가 함수에 함께 전달 됨
+        (event)=>{
+            const rect = special.getBoundingClientRect();
+            console.log(rect);
+            console.log(`
+                client : ${event.clientX}, ${event.clientY}
+                page : ${event.pageX}, ${event.pageY}
+                `);
+        }
+        */
+    </script>
+</body>
+
+</html>
