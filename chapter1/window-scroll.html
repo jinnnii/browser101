@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window-scroll</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: thistle;
+        }
+
+        aside {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .rect {
+            background-color: blueviolet;
+
+        }
+    </style>
+</head>
+
+<body>
+    <aside>
+        <button class="scroll-by">Scroll by 100px(y)</button>
+        <button class="scroll-to">Scroll to 100px(y)</button>
+        <button class="scroll-into">Scroll into special(y)</button>
+    </aside>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="rect"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        const byScroll = document.querySelector('.scroll-by');
+        const toScroll = document.querySelector('.scroll-to');
+        const IntoScroll = document.querySelector('.scroll-into');
+
+        byScroll.addEventListener('click', () => {
+            window.scrollBy(0, 100);
+        });
+
+        toScroll.addEventListener('click', () => {
+            window.scrollTo(0, 100);
+        });
+
+        IntoScroll.addEventListener('click', () => {
+            const rect = document.querySelector('.rect');
+            rect.scrollIntoView();
+        });
+
+    </script>
+</body>
+
+</html>
