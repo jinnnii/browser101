@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+        }
+
+        section {
+            width: 30%;
+            border-radius: 10px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: darkred;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        h1,
+        h3 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="target.png" />
+        <img src="avatar.png" />
+        <h1 id="name">Kim Eun Jin</h1>
+        <h3>Hello world!</h3>
+    </section>
+    <script>
+        //before explorer 5.5- selector
+        const name = document.getElementById('name');
+
+        //after explorer 8- selector
+        const image = document.querySelector('img'); // -> target
+        const avatar = document.querySelector('img[scr = "avatar.png"]') // -> avartar
+        const images = document.querySelectorAll('img'); //-> target, avartar
+
+        const section = document.querySelector('section');
+        const h2 = document.createElement('h2');
+        h2.setAttribute('class', 'title'); //<h2 class"title"></h2>
+        h2.textContent = 'This is a tilte'; //<h2 class"title">This is a tilte</h2>
+        const h3 = document.querySelector('h3');
+
+        section.appendChild(h2); //끝에 추가
+        section.insertBefore(h2, h3); //원하는 위치에 추가
+
+        //section.removeChild(h2);
+
+        //전체적인 코드 수정이 필요한 경우!
+        /*section.innerHTML = `
+        <img src="avatar.png" />
+        <h1 id="name">Kim Eun Jin</h1>
+        `;*/
+    </script>
+</body>
+
+</html>
